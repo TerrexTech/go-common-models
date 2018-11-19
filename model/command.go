@@ -6,13 +6,13 @@ import (
 
 // Command can be used to invoke a procedure in another service.
 type Command struct {
-	// Action is the action for which the command is being produced.
+	// Action for which the command is being produced.
 	Action string `json:"action,omitempty"`
 
 	// CorrelationID can be used to track Command's source or reason why it as generated.
 	CorrelationID uuuid.UUID `json:"correlationID,omitempty"`
 
-	// Data is the data required for invoking the command.
+	// Data required for invoking the command.
 	Data []byte `json:"data,omitempty"`
 
 	// ResponseTopic is the Messaging-Topic on which the
@@ -28,7 +28,7 @@ type Command struct {
 	// Timestamp is the time in Unix-milliseconds when this Command was generated.
 	Timestamp int64 `json:"timestamp,omitempty"`
 
-	// TTLSec is the Time To Live in seconds.
+	// TTLSec is the Time-To-Live in seconds.
 	// The Command should not be processed if current-time exceeds Timestamp+TTLSec.
 	TTLSec int32 `json:"ttlSec,omitempty"`
 

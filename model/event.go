@@ -15,7 +15,7 @@ type Event struct {
 	// CorrelationID can be used to track Event's source or reason why it as generated.
 	CorrelationID uuuid.UUID `cql:"correlation_id,omitempty" json:"correlationID,omitempty"`
 
-	// Data is the data contained by event.
+	// Data contained by event.
 	Data []byte `cql:"data,omitempty" json:"data,omitempty"`
 
 	// NanoTime is the time in nanoseconds since Unix-epoch to when the event was generated.
@@ -30,7 +30,7 @@ type Event struct {
 	// UUID is the V4-UUID unique-indentifier for event.
 	UUID uuuid.UUID `cql:"uuid,omitempty" json:"uuid,omitempty"`
 
-	// Version is the version for events as processed for aggregate-projection.
+	// Version for events as processed for aggregate-projection.
 	// This is incremented by the aggregate itself each time it updates its state.
 	Version int64 `cql:"version,omitempty" json:"version,omitempty"`
 
