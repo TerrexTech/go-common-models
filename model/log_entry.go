@@ -2,6 +2,9 @@ package model
 
 // LogEntry describes "what's currently happening" for logging purposes.
 type LogEntry struct {
+	// Action describes "what was happening" when this entry was created.
+	Action string `json:"action,omitempty"`
+
 	// Description of what happened, can also be an error description.
 	Description string `json:"description,omitempty"`
 
