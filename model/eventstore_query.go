@@ -18,6 +18,9 @@ type EventStoreQuery struct {
 	// responses generated as per result of event's processing.
 	CorrelationID uuuid.UUID `json:"correlationID,omitempty"`
 
+	// Topic on which Events are to be received.
+	Topic string `json:"topic,omitempty"`
+
 	// YearBucket is the partition-key for Event-Table.
 	YearBucket int16 `json:"yearBucket,omitempty"`
 
